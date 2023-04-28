@@ -10,6 +10,11 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
+
+require("dotenv").config();
+
+console.log(process.env.MONGO_URI)
+
 // Connect DB
 connectDB();
 
