@@ -1,4 +1,5 @@
 const express = require("express");
+const connectDB = require('./config/db');
 const app = express();
 
 const path = require("path");
@@ -9,6 +10,8 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
+// Connect DB
+connectDB();
 
 // Init Middleware
 app.use(express.json({ extended: false, limit: '50mb' }))
@@ -25,6 +28,8 @@ app.use((_req, res, next) => {
 app.get("/api/test", (req, res) => {
   res.send("test");
 });
+
+app.use('/api/trips', require('./routes/api/trips'));
 
 app.use(express.static(path.join(__dirname, "./frontend/build")));
 
