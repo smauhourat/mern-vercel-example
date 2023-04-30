@@ -31,7 +31,7 @@ app.use((_req, res, next) => {
 })
 
 app.get("/api/test", (req, res) => {
-  res.send("test");
+  res.send("test - conectamos git");
 });
 
 app.use('/api/trips', require('./routes/api/trips'));
