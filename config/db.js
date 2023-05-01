@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 //const config = require('config');
 //const db = config.get('mongoURI')
-//const db = "mongodb+srv://admin:admin@trekkingbsas.pjsax.mongodb.net/TrekkingBsAs?retryWrites=true&w=majority";
+const db = "mongodb+srv://admin:admin@trekkingbsas.pjsax.mongodb.net/TrekkingBsAs?retryWrites=true&w=majority";
 require("dotenv").config();
 
-const db = process.env.MONGO_URI;
+//const db = process.env.MONGO_URI;
 console.log(db);
 const connectDB = async () => {
     try {
