@@ -9,7 +9,13 @@
     "client": "npm start --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "build": "cd frontend && npm install && npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build-client": "npm run build --prefix frontend",
+    "server-test": "SET NODE_ENV=test & node index.js",
+    "client-test": "SET NODE_ENV=test & npm start --prefix frontend",
+    "test": "concurrently \"npm run server-test\" \"npm run client-test\"",
+    "server-development": "SET NODE_ENV=development & node index.js",
+    "client-development": "SET NODE_ENV=development & npm start --prefix frontend",
+    "development": "concurrently \"npm run server-development\" \"npm run client-development\""
   },
   "keywords": [],
   "author": "",

@@ -1,3 +1,6 @@
+const environment = require('./environment');
+global.env = environment;
+
 const express = require("express");
 const connectDB = require('./config/db');
 const app = express();

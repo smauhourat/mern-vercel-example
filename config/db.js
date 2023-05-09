@@ -1,16 +1,12 @@
 const mongoose = require('mongoose');
-//const config = require('config');
-//const db = config.get('mongoURI')
-//const db = "mongodb+srv://admin:admin@trekkingbsas.pjsax.mongodb.net/TrekkingBsAs?retryWrites=true&w=majority";
-require("dotenv").config();
+db = global.env.mongoUri;
+const db_name = db.substring(db.indexOf('/', 14) + 1, db.indexOf('?'));
 
-const db = process.env.MONGO_URI;
-console.log(db);
 const connectDB = async () => {
     try {
-        await mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true });
+        await mongoose.connect(db);
 
-        console.log('MongoDb Connected...')
+        console.log(`MongoDb Connected...${db_name}`)
     } catch (err) {
         console.error(err);
         // Exit process with failure
