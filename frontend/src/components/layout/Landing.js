@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 const Landing = () => {
   const [search, setSearch] = useState('');
   const navigate = useNavigate();
-  
+
   const onChange = e =>
     setSearch(e.target.value);
 
@@ -20,7 +20,7 @@ const Landing = () => {
         <div className="dark-overlay">
           <div className="landing-inner">
             <div className="logo-big"></div>
-            <h1 className="x-large">Bienvenidos a Trekking Buenos Aires</h1>
+            <h1 className="x-large">Bienvenidos a Trekking Buenos Aires - Test</h1>
             <h1 className="large">Cruzando los límites</h1>
             <p className="lead">
               Somos un grupo de amigos, y amigos de amigos haciendo trekking.
